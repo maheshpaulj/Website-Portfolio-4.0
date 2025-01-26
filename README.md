@@ -75,4 +75,4 @@ performance benchmark is low since pageInsight is not suited for websites with p
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or new features.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/CityIsBetter/Website-Portfolio-4.0/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/maheshpaulj/Website-Portfolio-4.0/blob/main/LICENSE) file for details.

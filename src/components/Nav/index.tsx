@@ -50,7 +50,7 @@ const Nav = ({close} : {close: any}) => {
                     }            
             </div>
             <div className={styles.footer}>
-                <Magnetic><a href='https://github.com/CityIsBetter/' target='_blank'>Github</a></Magnetic>
+                <Magnetic><a href='https://github.com/maheshpaulj/' target='_blank'>Github</a></Magnetic>
                 <Magnetic><a href='https://instagram.com/mahesh_paul_j' target='_blank'>Instagram</a></Magnetic>
                 <Magnetic><a href='https://discordapp.com/users/509270434303311872' target='_blank'>Discord</a></Magnetic>
                 <Magnetic><a href='https://linkedin.com/in/mahesh-paul' target='_blank'>LinkedIn</a></Magnetic>   

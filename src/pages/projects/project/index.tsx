@@ -12,7 +12,7 @@ export default function Project() {
       Mockup: '/assets/NoteScape.png',
       Lang: "next ts tailwind node firebase",
       Blog: "https://medium.com/@mahesh.paul.j/notescape-building-the-ultimate-note-taking-app-with-ai-and-seamless-sync-6fc92f0e6249",
-      Github: "https://github.com/CityIsBetter/NoteScape",
+      Github: "https://github.com/maheshpaulj/NoteScape",
       Site: "https://notescape.vercel.app/",
     },
     {
@@ -20,7 +20,7 @@ export default function Project() {
       Desc: "ResumeItNow is a free, open-source resume builder that helps job seekers create professional resumes without watermarks or hidden fees. Built with modern technologies and powered by AI, it offers a seamless experience for creating ATS-friendly resumes.",
       Mockup: '/assets/resumeitnow.png',
       Lang: "next ts tailwind node firebase",
-      Github: "https://github.com/CityIsBetter/ResumeItNow",
+      Github: "https://github.com/maheshpaulj/ResumeItNow",
       Site: "https://resumeitnow.vercel.app/",
     },
     {
@@ -28,7 +28,7 @@ export default function Project() {
       Desc: "A modern, real-time collaborative whiteboard application built with Next.js 14, enabling teams to visualize ideas and work together seamlessly.",
       Mockup: '/assets/boardscape.png',
       Lang: "next ts tailwind node convex clerk liveblocks",
-      Github: "https://github.com/CityIsBetter/BoardScape",
+      Github: "https://github.com/maheshpaulj/BoardScape",
       Site: "https://boardscape.vercel.app/",
     },
     {
@@ -37,7 +37,7 @@ export default function Project() {
       Mockup: '/assets/academiaHub.png',
       Lang: "react js css node firebase",
       Blog: "https://medium.com/@mahesh.paul.j/creating-academiahub-a-comprehensive-student-companion-81d9c2186299",
-      Github: "https://github.com/CityIsBetter/AcademiaHUB",
+      Github: "https://github.com/maheshpaulj/AcademiaHUB",
       Site: "https://academiahub.netlify.app/",
     },
     {
@@ -46,7 +46,7 @@ export default function Project() {
       Mockup: '/assets/mangaScrapper.png',
       Lang: "python",
       Blog: "",
-      Github: "https://github.com/CityIsBetter/Manga-Scraper",
+      Github: "https://github.com/maheshpaulj/Manga-Scraper",
       Site: "",
     },
     {
@@ -55,7 +55,7 @@ export default function Project() {
       Mockup: '/assets/prompt2shorts.png',
       Lang: "next ts tailwind node",
       Blog: "",
-      Github: "https://github.com/CityIsBetter/Prompt2Shorts",
+      Github: "https://github.com/maheshpaulj/Prompt2Shorts",
       Site: "https://prompt2shorts.vercel.app",
     },
     {
@@ -64,7 +64,7 @@ export default function Project() {
       Mockup: '/assets/portfolio 2.0.png',
       Lang: "react js node sass",
       Blog: "",
-      Github: "https://github.com/CityIsBetter/Portfolio",
+      Github: "https://github.com/maheshpaulj/Portfolio",
       Site: "https://maheshpaul.netlify.app/",
     },
     {
@@ -73,7 +73,7 @@ export default function Project() {
       Mockup: '/assets/weather_app.gif',
       Lang: "java",
       Blog: "",
-      Github: "https://github.com/CityIsBetter/weather-app-java",
+      Github: "https://github.com/maheshpaulj/weather-app-java",
       Site: "",
     },
     {
@@ -82,7 +82,7 @@ export default function Project() {
       Mockup: '/assets/Dijkstra.png',
       Lang: "python",
       Blog: "",
-      Github: "https://github.com/CityIsBetter/Pathfinding-Algorithms",
+      Github: "https://github.com/maheshpaulj/Pathfinding-Algorithms",
       Site: "",
     },
     {
@@ -91,7 +91,7 @@ export default function Project() {
       Mockup: '/assets/tetris.png',
       Lang: "python",
       Blog: "",
-      Github: "https://github.com/CityIsBetter/Tetris-pygame",
+      Github: "https://github.com/maheshpaulj/Tetris-pygame",
       Site: "",
     },
     {
@@ -100,8 +100,8 @@ export default function Project() {
       Mockup: '/assets/weather.png',
       Lang: "html js css",
       Blog: "",
-      Github: "https://github.com/CityIsBetter/weather-app",
-      Site: "https://cityisbetter.github.io/weather-app/",
+      Github: "https://github.com/maheshpaulj/weather-app",
+      Site: "https://maheshpaulj.github.io/weather-app/",
     },
   ]
 

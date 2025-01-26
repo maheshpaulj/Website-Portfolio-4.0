@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
               <span>
                 <h3>socials</h3>
                 <Magnetic>
-                  <a href='https://github.com/CityIsBetter/' target='_blank' rel="noopener noreferrer">Github</a>
+                  <a href='https://github.com/maheshpaulj/' target='_blank' rel="noopener noreferrer">Github</a>
                 </Magnetic>
               </span>
               <Magnetic>
