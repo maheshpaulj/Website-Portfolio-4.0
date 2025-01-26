@@ -3,7 +3,6 @@ import styles from './style.module.scss'
 import Image from 'next/image'
 import Magnetic from '@/components/Magnetic'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { slideUp } from '@/components/anim/anim'
 
 export default function Project() {
   const projects = [
@@ -107,52 +106,114 @@ export default function Project() {
   ]
 
   const container = useRef(null);
-  const prjRef = useRef(null);
 
-  const isPrjInView = useInView(prjRef);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  })
 
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ["start end", "end start"]
-    })
+  const height = useTransform(scrollYProgress, [0, 0.9], [50, 10]);
 
-    const height = useTransform(scrollYProgress, [0, 0.9], [50, 10]);
+  // Staggered animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  }
 
   return (
     <main ref={container} className={styles.main}>
-      <div className={styles.projectContainer} ref={prjRef}>
-        {
-          projects.map((project, index) => {
-            return <motion.div className={styles.project} key={index}  variants={slideUp} custom={index} animate={isPrjInView ? "open" : "closed"}>
-                      <div className={styles.mockupContainer}><Image src={project.Mockup} alt='project mockup' className={styles.projectImg} width={1280} height={720}/></div>
-                      
-                      <div className={styles.content}>
-                        <div className={styles.contentWrapper}>
-                          <div className="">
-                            <p className={styles.title}>{project.Title}</p>
-                            <p className={styles.desc}>{project.Desc}</p>
-                          </div>
-                          <div className={styles.lang}>
-                            {
-                              project.Lang.split(" ").map((lang, index) => {
-                                return (
-                                <Magnetic key={index}>
-                                  <Image src={`/assets/${lang}.png`} alt={`${lang} logo`} width={48} height={48}/>
-                                </Magnetic>)
-                              })
-                            }
-                          </div>
-                        </div>
-                        <div className={styles.links}>
-                          {project.Blog && <Magnetic><a href={project.Blog} target='_blank'>Blog</a></Magnetic>}
-                          {project.Github && <Magnetic><a href={project.Github} target='_blank'>Github</a></Magnetic>}
-                          {project.Site && <Magnetic><a href={project.Site} target='_blank'>Site</a></Magnetic>}
-                        </div>
-                      </div>
-                    </motion.div>
-          })
-        }
-      </div>
+      <motion.div 
+        className={styles.projectContainer}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {projects.map((project, index) => {
+          return (
+            <motion.div 
+              className={styles.project} 
+              key={index}
+              variants={itemVariants}
+            >
+              <motion.div 
+                className={styles.mockupContainer}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: 0.5,
+                  ease: "easeOut"
+                }}
+                viewport={{ once: true }}
+              >
+                <Image 
+                  src={project.Mockup} 
+                  alt='project mockup' 
+                  className={styles.projectImg} 
+                  width={1280} 
+                  height={720}
+                />
+              </motion.div>
+              
+              <motion.div 
+                className={styles.content}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.5,
+                  delay: 0.2,
+                  ease: "easeOut"
+                }}
+                viewport={{ once: true }}
+              >
+                <div className={styles.contentWrapper}>
+                  <div className="">
+                    <p className={styles.title}>{project.Title}</p>
+                    <p className={styles.desc}>{project.Desc}</p>
+                  </div>
+                  <div className={styles.lang}>
+                    {project.Lang.split(" ").map((lang, index) => (
+                      <Magnetic key={index}>
+                        <Image 
+                          src={`/assets/${lang}.png`} 
+                          alt={`${lang} logo`} 
+                          width={48} 
+                          height={48}
+                        />
+                      </Magnetic>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.links}>
+                  {project.Blog && <Magnetic><a href={project.Blog} target='_blank'>Blog</a></Magnetic>}
+                  {project.Github && <Magnetic><a href={project.Github} target='_blank'>Github</a></Magnetic>}
+                  {project.Site && <Magnetic><a href={project.Site} target='_blank'>Site</a></Magnetic>}
+                </div>
+              </motion.div>
+            </motion.div>
+          )
+        })}
+      </motion.div>
       <motion.div style={{height}} className={styles.circleContainer}>
         <div className={styles.circle}></div>
       </motion.div>
