@@ -37,7 +37,7 @@ export default function Project() {
       Mockup: '/assets/lane_detection.png',
       Lang: "python",
       Blog: "https://medium.com/@mahesh.paul.j/building-a-lane-and-car-detection-system-using-yolov8-and-opencv-b562f68bf15e",
-      Github: "https://github.com/maheshpaulj/Lane_Detection.png",
+      Github: "https://github.com/maheshpaulj/Lane_Detection",
     },
     {
       Title: "Manga Scraper",
