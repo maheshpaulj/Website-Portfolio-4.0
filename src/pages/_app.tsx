@@ -9,10 +9,40 @@ import Lenis from "lenis";
 
 import Navbar from "@/components/Navbar";
 import BurgerMenu from "@/components/BurgerMenu";
+import { Metadata } from "next";
 
 const raleway = Raleway({
   subsets: ['latin'],
 })
+
+export const metadata: Metadata = {
+  title: 'Mahesh Paul | Portfolio',
+  description: 'Welcome to Mahesh Paul\'s developer portfolio – built with Next.js, Framer Motion & GSAP.',
+  openGraph: {
+    title: 'Mahesh Paul | Portfolio',
+    description: 'Frontend Developer Portfolio – Explore my work, skills and creative web experiences.',
+    url: 'https://maheshpaul.is-a.dev',
+    images: [
+      {
+        url: '/preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Mahesh Paul Portfolio Preview',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mahesh Paul | Portfolio',
+    description: 'Frontend Developer Portfolio – Explore my work, skills and creative web experiences.',
+    images: ['/preview.png'],
+  },
+  other: {
+    'google-site-verification': 'k6GVSzNeUo-dwkno13jeI37Y7mqht6lYJP8kOYAnJ4w',
+  },
+};
+
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const routeChange = () => {
