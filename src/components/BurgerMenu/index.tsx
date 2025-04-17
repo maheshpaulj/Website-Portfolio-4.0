@@ -24,7 +24,7 @@ export default function BurgerMenu() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (isActive) setIsActive(false);
+    if (isActive) setIsActive(false); // eslint-disable-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useLayoutEffect(() => {
