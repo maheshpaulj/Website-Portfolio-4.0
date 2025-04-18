@@ -58,10 +58,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta name="description" content="Mahesh Paul's Website Portfolio, Home Page" />
+        <meta name="description" content="Welcome to Mahesh Paul's developer portfolio – built with Next.js, Framer Motion & GSAP." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        {/* <meta name="google-site-verification" content="IVOjL--iVz33j73JnMvQT2vZsRoEje6C9GQGxF8BlxQ" /> */}
         <meta name="google-site-verification" content="k6GVSzNeUo-dwkno13jeI37Y7mqht6lYJP8kOYAnJ4w" />
       </Head>
       <Curve>
