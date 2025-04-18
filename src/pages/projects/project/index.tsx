@@ -151,8 +151,8 @@ export default function Project() {
     <main ref={container} className={styles.main}>
       <div className={styles.projectContainer}>
         {projects.map((project, index) => {
-          const projectRef = useRef(null);
-          const isInView = useInView(projectRef, { margin: "-30% 0px -30% 0px", once: false });
+          const projectRef = useRef(null); // eslint-disable-line react-hooks/rules-of-hooks
+          const isInView = useInView(projectRef, { margin: "-30% 0px -30% 0px", once: false }); // eslint-disable-line react-hooks/rules-of-hooks
 
           return (
             <motion.div 

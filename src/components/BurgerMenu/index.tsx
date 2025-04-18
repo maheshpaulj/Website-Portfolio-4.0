@@ -24,8 +24,8 @@ export default function BurgerMenu() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (isActive) setIsActive(false); // eslint-disable-line react-hooks/exhaustive-deps
-  }, [pathname]);
+    if (isActive) setIsActive(false); 
+  }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
