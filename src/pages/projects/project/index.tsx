@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import styles from './style.module.scss'
 import Image from 'next/image'
 import Magnetic from '@/components/Magnetic'
-import { motion, useInView } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function Project() {
   const projects = [
@@ -106,81 +106,93 @@ export default function Project() {
 
   const container = useRef(null);
 
-  // Animation variants for the card
-  const cardVariants = {
-    hidden: { 
-      scale: 0.8, 
-      opacity: 0.5, 
-      y: 100 
-    },
-    visible: { 
-      scale: 1, 
-      opacity: 1, 
-      y: 0,
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  })
+
+  const height = useTransform(scrollYProgress, [0, 0.9], [50, 10]);
+
+  // Staggered animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    },
-    exit: { 
-      scale: 0.8, 
-      opacity: 0.5, 
-      y: -100,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        delayChildren: 0.2,
+        staggerChildren: 0.1
       }
     }
   }
 
-  // Animation variants for content
-  const contentVariants = {
-    hidden: { opacity: 0, y: 50 },
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50 
+    },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
-        delay: 0.2
+        ease: "easeOut"
       }
     }
   }
 
   return (
     <main ref={container} className={styles.main}>
-      <div className={styles.projectContainer}>
+      <motion.div 
+        className={styles.projectContainer}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {projects.map((project, index) => {
-          const projectRef = useRef(null); // eslint-disable-line react-hooks/rules-of-hooks
-          const isInView = useInView(projectRef, { margin: "-30% 0px -30% 0px", once: false }); // eslint-disable-line react-hooks/rules-of-hooks
-
           return (
             <motion.div 
               className={styles.project} 
-              key={index} 
-              ref={projectRef}
-              variants={cardVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
+              key={index}
+              variants={itemVariants}
             >
-              <div 
-                className={styles.background}
-                style={{
-                  backgroundImage: `url(${project.Mockup})`,
+              <motion.div 
+                className={styles.mockupContainer}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: 0.5,
+                  ease: "easeOut"
                 }}
-              />
+                viewport={{ once: true }}
+              >
+                <Image 
+                  src={project.Mockup} 
+                  alt='project mockup' 
+                  className={styles.projectImg} 
+                  width={1280} 
+                  height={720}
+                />
+              </motion.div>
+              
               <motion.div 
                 className={styles.content}
-                variants={contentVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.5,
+                  delay: 0.2,
+                  ease: "easeOut"
+                }}
+                viewport={{ once: true }}
               >
                 <div className={styles.contentWrapper}>
-                  <p className={styles.title}>{project.Title}</p>
-                  <p className={styles.desc}>{project.Desc}</p>
+                  <div className="">
+                    <p className={styles.title}>{project.Title}</p>
+                    <p className={styles.desc}>{project.Desc}</p>
+                  </div>
                   <div className={styles.lang}>
-                    {project.Lang.split(" ").map((lang, langIndex) => (
-                      <Magnetic key={langIndex}>
+                    {project.Lang.split(" ").map((lang, index) => (
+                      <Magnetic key={index}>
                         <Image 
                           src={`/assets/${lang}.png`} 
                           alt={`${lang} logo`} 
@@ -190,17 +202,20 @@ export default function Project() {
                       </Magnetic>
                     ))}
                   </div>
-                  <div className={styles.links}>
-                    {project.Blog && <Magnetic><a href={project.Blog} target='_blank'>Blog</a></Magnetic>}
-                    {project.Github && <Magnetic><a href={project.Github} target='_blank'>Github</a></Magnetic>}
-                    {project.Site && <Magnetic><a href={project.Site} target='_blank'>Site</a></Magnetic>}
-                  </div>
+                </div>
+                <div className={styles.links}>
+                  {project.Blog && <Magnetic><a href={project.Blog} target='_blank'>Blog</a></Magnetic>}
+                  {project.Github && <Magnetic><a href={project.Github} target='_blank'>Github</a></Magnetic>}
+                  {project.Site && <Magnetic><a href={project.Site} target='_blank'>Site</a></Magnetic>}
                 </div>
               </motion.div>
             </motion.div>
           )
         })}
-      </div>
+      </motion.div>
+      <motion.div style={{height}} className={styles.circleContainer}>
+        <div className={styles.circle}></div>
+      </motion.div>
     </main>
   )
 }
