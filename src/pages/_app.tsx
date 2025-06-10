@@ -55,7 +55,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         />
         <meta property="og:url" content="https://maheshpaul.is-a.dev" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/preview.png" />
+        <meta property="og:image" content="https://raw.githubusercontent.com/maheshpaulj/Website-Portfolio-4.0/refs/heads/main/public/preview.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Mahesh Paul Portfolio Preview" />
@@ -66,7 +66,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           name="twitter:description"
           content="Frontend Developer Portfolio – Explore my work, skills and creative web experiences."
         />
-        <meta name="twitter:image" content="/preview.png" />
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/maheshpaulj/Website-Portfolio-4.0/refs/heads/main/public/preview.png" />
         {/* Google Site Verification */}
         <meta
           name="google-site-verification"
