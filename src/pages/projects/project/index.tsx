@@ -8,7 +8,7 @@ export default function Project() {
   const projects = [
     {
       Title: "NoCodefolio",
-      Desc: "NoCodefolio is the quickest way for anyone to build, host, and own a professional portfolio website for free. It bridges the gap between no-code simplicity and developer-grade quality by offering a live, visual editor with stunning templates that can be launched to the internet with a single click. For those who want full control, NoCodefolio also allows users to download the clean, production-ready Next.js and Tailwind CSS source code at any time, ensuring true ownership without any vendor lock-in.",
+      Desc: "NoCodefolio is the quickest way for anyone to build, host, and own a professional portfolio website for free. It bridges the gap between no-code simplicity and quality by offering a live, visual editor with templates that can be launched to the internet with a single click. ",
       Mockup: '/assets/nocodefolio.png',
       Lang: "next ts tailwind node firebase",
       Github: "https://github.com/maheshpaulj/NoCodefolio",
