@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     position: absolute;
     display: flex;
     z-index: 10;
@@ -11,14 +11,15 @@
     box-sizing: border-box;
     align-items: center;
 
-    .nav{
+    .nav {
         display: flex;
         align-items: center;
+
         @media (max-width: 700px) {
             display: none;
         }
 
-        .el{
+        .el {
             display: flex;
             flex-direction: column;
             position: relative;
@@ -26,12 +27,14 @@
             padding: 15px;
             cursor: pointer;
 
-            &:hover{
-                .indicator{
-                    transform: scale(1);
+            &:hover,
+            &.active {
+                .indicator {
+                    transform: scale(1) translateX(-50%);
                 }
             }
-            .indicator{
+
+            .indicator {
                 position: absolute;
                 width: 5px;
                 height: 5px;
@@ -43,39 +46,46 @@
                 transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
             }
         }
-        a{
+
+        a {
             color: white;
             font-style: normal;
             font-weight: 700;
             font-size: 16px;
             cursor: pointer;
         }
-    } 
+    }
 }
-.logo{
+
+.logo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    img{
+
+    img {
         object-fit: contain;
         max-height: 50px;
         user-select: none;
         z-index: 2;
-        @media (max-width: 430px){
+
+        @media (max-width: 430px) {
             max-height: 40px;
             max-width: 232px;
         }
-        @media (max-width: 360px){
+
+        @media (max-width: 360px) {
             max-height: 35px;
             max-width: 203px;
         }
     }
 }
-.menuButton{
+
+.menuButton {
     position: relative;
     display: none;
     justify-self: flex-end;
-    .el{
+
+    .el {
         color: white;
         font-style: normal;
         font-weight: 700;
@@ -83,17 +93,18 @@
         cursor: pointer;
     }
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
         display: block;
     }
-    @media (max-width: 360px){
+
+    @media (max-width: 360px) {
         font-size: 14px;
     }
 }
+
 .noScroll {
     overflow: hidden;
     height: 100vh;
     position: fixed;
     width: 100%;
 }
-  

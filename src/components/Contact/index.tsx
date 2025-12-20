@@ -27,7 +27,7 @@ const Contact = () => {
                     <h2>a Chat</h2>
                     <div className={styles.line}><Line scolor={"#fff"} sright={100} w={.8}/></div>
                     <motion.div style={{x}} className={styles.buttonContainer}>
-                        <Link href={"/contact"}><Magnetic>
+                        <Link href={"/contact"}><Magnetic parallax={true}>
                             <div className={styles.button}>
                                 <p>Get in touch </p>
                             </div>
@@ -39,11 +39,11 @@ const Contact = () => {
                     </motion.svg>
                 </div> 
                 <div className={styles.nav}>
-                    <Magnetic><div className={styles.button}>
+                    <Magnetic parallax={true}><div className={styles.button}>
                           <a href='mailto:mahesh.paul.j@gmail.com'><p>mahesh.paul.j@gmail.com</p></a>
                         </div>
                     </Magnetic>
-                    <Magnetic><div className={styles.button}>
+                    <Magnetic parallax={true}><div className={styles.button}>
                            <a href='tel:+919025698209'><p>+91 9025698209</p></a>
                         </div>
                     </Magnetic>
@@ -52,7 +52,7 @@ const Contact = () => {
                     <div className={styles.v}>
                         <span>
                             <h3>Version</h3>
-                            <p>2024 © Edition</p>
+                            <p>2025 © Edition</p>
                         </span>
                     </div>
                     <div className={styles.s}>

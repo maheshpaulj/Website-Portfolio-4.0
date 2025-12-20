@@ -48,6 +48,15 @@ export default function Project() {
       Github: "https://github.com/maheshpaulj/Lane_Detection",
     },
     {
+      Title: "AnimateItNow",
+      Desc: "AnimateItNow lets you turn natural language prompts into stunning Manim animations using LLMs via OpenRouter.",
+      Mockup: '/assets/animateitnow.gif',
+      Lang: "python",
+      Blog: "",
+      Github: "https://github.com/maheshpaulj/AnimateItNow",
+      Site: "",
+    },
+    {
       Title: "Manga Scraper",
       Desc: "Manga Scraping Tool made in python, It fetches the manga page from the website and downloads it in JPG format and saves it locally. This is basically web Scraping",
       Mockup: '/assets/mangaScrapper.png',
@@ -64,15 +73,6 @@ export default function Project() {
       Blog: "",
       Github: "https://github.com/maheshpaulj/Prompt2Shorts",
       Site: "https://prompt2shorts.vercel.app",
-    },
-    {
-      Title: "Old Portfolio",
-      Desc: "This is my old website portfolio made using reactJS and Sanity and hosted in Netlify!",
-      Mockup: '/assets/portfolio 2.0.png',
-      Lang: "react js node sass",
-      Blog: "",
-      Github: "https://github.com/maheshpaulj/Portfolio",
-      Site: "https://maheshpaul.netlify.app/",
     },
     {
       Title: "Weather App",
@@ -179,6 +179,7 @@ export default function Project() {
                   className={styles.projectImg} 
                   width={1280} 
                   height={720}
+                  draggable={false}
                 />
               </motion.div>
               
@@ -206,6 +207,7 @@ export default function Project() {
                           alt={`${lang} logo`} 
                           width={48} 
                           height={48}
+                          draggable={false}
                         />
                       </Magnetic>
                     ))}

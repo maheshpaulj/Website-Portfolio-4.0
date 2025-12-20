@@ -1,16 +1,36 @@
-.burgerContainer{
+.burgerContainer {
     position: fixed;
-    right: 0; 
+    right: 0;
     z-index: 12;
     transform: scale(0);
 }
-.button{
+
+.pageShadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 10;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.button {
     right: 0;
     margin: 20px;
     width: 80px;
     height: 80px;
 
-    background-color: #333;;
+    background-color: #333;
+    ;
     border-radius: 50%;
 
     position: relative;
@@ -21,10 +41,12 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
     transition: background-color 0.3s ease-in-out;
-    
-    .burger{
+
+    .burger {
         width: 100%;
-        &::after, &::before{
+
+        &::after,
+        &::before {
             content: "";
             display: block;
             width: 40%;
@@ -35,27 +57,28 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        &::after{
+        &::after {
             top: -5px;
         }
 
-        &::before{
+        &::before {
             top: 5px;
         }
     }
 
-    .burgerActive{
-        &::after{
+    .burgerActive {
+        &::after {
             top: -1px;
             transform: rotate(45deg);
         }
-        &::before{
+
+        &::before {
             top: 0px;
             transform: rotate(-45deg);
         }
     }
 
-    &:hover{
+    &:hover {
         background-color: #455CE9;
         border: 2px solid #333;
     }

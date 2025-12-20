@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Nav from '../Nav';
 import Magnetic from '../Magnetic';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { usePathname } from 'next/navigation';
@@ -57,6 +57,17 @@ export default function BurgerMenu() {
 
   return (
     <>
+      <motion.div 
+        variants={{
+            initial: { opacity: 0, x: "100%" },
+            enter: { opacity: 1, x: "0%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+            exit: { opacity: 0, x: "100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }
+        }}
+        initial="initial"
+        animate={isActive ? "enter" : "exit"}
+        className={`${styles.pageShadow} ${isActive ? styles.active : ''}`}
+        onClick={() => setIsActive(false)}
+      />
       <div
         onClick={() => setIsActive(!isActive)}
         className={styles.burgerContainer}

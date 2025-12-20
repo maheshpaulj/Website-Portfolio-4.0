@@ -164,9 +164,10 @@ const Contact: React.FC = () => {
               <motion.div style={{ x }} className={styles.buttonContainer}>
                 <Magnetic>
                   <div className={styles.button}>
-                    <svg width="120" height="120" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="120" height="120" viewBox="0 0 70 70" fill="none" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
                       <path d="M20.4167 49.5834H15.95C12.9502 49.5834 11.4503 49.5834 10.3989 48.8195C10.0593 48.5728 9.76065 48.2741 9.51393 47.9346C8.75 46.8831 8.75 45.3832 8.75 42.3834V18.8667C8.75 15.867 8.75 14.3671 9.51393 13.3156C9.76065 12.976 10.0593 12.6774 10.3989 12.4307C11.4503 11.6667 12.9502 11.6667 15.95 11.6667H54.05C57.0498 11.6667 58.5497 11.6667 59.6011 12.4307C59.9407 12.6774 60.2394 12.976 60.4861 13.3156C61.25 14.3671 61.25 15.867 61.25 18.8668V42.3834C61.25 45.3832 61.25 46.8831 60.4861 47.9346C60.2394 48.2741 59.9407 48.5728 59.6011 48.8195C58.5497 49.5834 57.0498 49.5834 54.05 49.5834H35" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M20.4167 49.5833L17.5 58.3333L35 49.5833" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M18 24H52M18 31H52M18 38H52" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </div>
                 </Magnetic>
@@ -197,8 +198,8 @@ const Contact: React.FC = () => {
                 <div className={styles.sendContainer}>
                   <Line scolor={"#57585A"} w={.8} sright={0} />
                   <motion.div style={{ x }} className={styles.buttonContainer}>
-                    <Magnetic>
-                      <input type="submit" value="Send" className={styles.button} />
+                    <Magnetic parallax={true}>
+                       <button type="submit" className={styles.button}><span>Send</span></button>
                     </Magnetic>
                   </motion.div>
                 </div>
@@ -209,7 +210,7 @@ const Contact: React.FC = () => {
             <div className={styles.v}>
               <span>
                 <h3>Version</h3>
-                <p>2024 © Edition</p>
+                <p>2025 © Edition</p>
               </span>
             </div>
             <div className={styles.s}>

@@ -6,8 +6,11 @@ import Magnetic from '../Magnetic';
 import Nav from '../Nav';
 import { AnimatePresence } from 'framer-motion';
 
+import { usePathname } from 'next/navigation';
+
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     // Add or remove the 'no-scroll' class based on 'isActive'
@@ -40,25 +43,25 @@ const Navbar = () => {
           </div>
           <div className={styles.nav}>
             <Magnetic>
-              <div className={styles.el}>
+              <div className={`${styles.el} ${pathname === '/' ? styles.active : ''}`}>
                 <Link href='/'>Home</Link>
                 <div className={styles.indicator}></div>
               </div>
             </Magnetic>
             <Magnetic>
-              <div className={styles.el}>
+              <div className={`${styles.el} ${pathname === '/about' ? styles.active : ''}`}>
                 <Link href='/about'>About</Link>
                 <div className={styles.indicator}></div>
               </div>
             </Magnetic>
             <Magnetic>
-              <div className={styles.el}>
+              <div className={`${styles.el} ${pathname === '/projects' ? styles.active : ''}`}>
                 <Link href='/projects'>Projects</Link>
                 <div className={styles.indicator}></div>
               </div>
             </Magnetic>
             <Magnetic>
-              <div className={styles.el}>
+              <div className={`${styles.el} ${pathname === '/contact' ? styles.active : ''}`}>
                 <Link href='/contact'>Contact</Link>
                 <div className={styles.indicator}></div>
               </div>

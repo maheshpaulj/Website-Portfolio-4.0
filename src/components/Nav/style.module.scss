@@ -1,4 +1,4 @@
-.menu{
+.menu {
     position: fixed;
     right: 0;
     top: 0;
@@ -6,43 +6,46 @@
     max-width: 100vw;
     background-color: rgb(41, 41, 41);
     color: white;
-    z-index: 9;
+    z-index: 11;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .75);
 
-    .body{
+    .body {
         padding: 100px 50px 100px 100px;
         display: flex;
         flex-direction: column;
         height: 100%;
         box-sizing: border-box;
         justify-content: space-between;
-        @media (max-width: 500px){
+
+        @media (max-width: 500px) {
             padding: 50px;
             justify-content: flex-start;
         }
 
-        .nav{
+        .nav {
             display: flex;
             flex-direction: column;
             font-size: 56px;
             gap: 12px;
             margin-top: 80px;
 
-            .header{
+            .header {
                 color: rgb(153, 153, 153);
                 border-bottom: 1px solid rgb(153, 153, 153);
                 text-transform: uppercase;
                 font-size: 11px;
                 margin-bottom: 40px;
             }
-            a{
+
+            a {
                 text-decoration: none;
                 color: white;
                 font-weight: 300;
             }
         }
     }
-    .footer{
+
+    .footer {
 
         display: flex;
         width: 100%;
@@ -50,16 +53,18 @@
         font-size: 12px;
         gap: 40px;
 
-        @media (max-width: 500px){
+        @media (max-width: 500px) {
             margin-top: 100px;
             gap: 20px;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: white;
             font-weight: 100;
             font-size: 16px;
-            &::after{
+
+            &::after {
                 content: "";
                 width: 0%;
                 height: 1px;
@@ -71,8 +76,9 @@
                 transform: translateX(-50%);
                 transition: width 0.2s linear;
             }
-            &:hover{
-                &::after{
+
+            &:hover {
+                &::after {
                     width: 100%;
                 }
             }

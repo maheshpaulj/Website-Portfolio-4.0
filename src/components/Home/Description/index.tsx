@@ -29,7 +29,7 @@ export default function Description() {
             </p>
             <div data-scroll data-scroll-speed={0.1}>
               
-              <Link href={"/about"}><Magnetic><div className={styles.button}>About Me</div></Magnetic></Link>
+              <Link href={"/about"}><Magnetic parallax={true}><div className={styles.button}><span>About Me</span></div></Magnetic></Link>
             </div>
           </div>
           <Line scolor={`#000`} w={.85} sright={0}/>
